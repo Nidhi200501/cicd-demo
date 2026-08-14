@@ -18,5 +18,7 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_KEY }}
+          port: 22
           script: |
-            sudo cp /home/ubuntu/cicd-demo/index.html /var/www/html/cicd-demo/
+            sudo cp ~/index.html /var/www/html/cicd-demo/index.html
+            sudo systemctl restart nginx
